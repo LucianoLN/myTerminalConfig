@@ -1,0 +1,146 @@
+" configura tabline e statusline 
+set showtabline=2
+
+" sem statusline = 1, com = 2
+set laststatus=2
+
+" configura statusline
+set statusline=%F       " Path to the file
+set statusline+=\       " Separator
+set statusline+=%y      " Filetype of the file
+set statusline+=\ %l    " Current line
+set statusline+=/       " Separator
+set statusline+=%L      " Total lines
+set statusline+=\ %c    " Current column
+
+
+" Informações sobre > TabLine <  
+hi TabLineFill term=bold cterm=bold ctermbg=black ctermfg=yellow
+hi TabLineSel ctermfg=gray 
+
+
+
+
+" cor do arquivo
+hi TabLineSel   cterm=bold,reverse           ctermfg=30 
+
+
+hi TabLine      cterm=none   ctermfg=0 
+
+
+" cor da barra superior
+hi TabLineFill  cterm=reverse       ctermbg=None        ctermfg=232 
+
+
+" barra inferior
+hi StatusLine   cterm=bold,reverse           ctermfg=30
+
+
+
+
+
+" Matching de parênteses automático"
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap { {}<Esc>i
+inoremap ' ''<Esc>i
+"inoremap "<Esc>i
+
+" Para colorir adequadamente o matching parênteses"
+hi MatchParen cterm=bold ctermbg=none ctermfg=226
+
+
+
+
+" Usar Tab e Shift-Tab para alternar entre buffers abertos
+noremap <Tab> :bn<Enter>
+noremap <S-Tab> :bp<Enter>
+
+
+" SOBRE AS CORES:
+"     -> cterm = Estrutura da fonte. Ela pode ser default(none), negrito(bold), italico(italic) ou sublinhada(underline)
+"         obs: so uso bold e none... pode dar erro nas outras.
+"
+"     -> ctermbg = Personalização da fonte(cores) bg(background). Pode ser feita por número de cores ou por nome.
+"
+"     -> ctermfg = Personalização da fonte(cores) fg(foreground). Pode ser feita por número de cores ou por nome.
+"     
+"
+" OBS: Qualquer sintaxe que desejas alterar que não esteja aqui, você pode ir na função normal do vim, e escrever > :help syntax < 
+"      o vim irá abrir uma espécie de aba que você pode verificar a partir da linha 225 todas as sintaxes disponíveis e suas cores.
+
+
+"|===================== Cor do VIM =====================|"
+
+" Comentários
+hi Comment ctermbg=none ctermfg=DarkGray
+
+" Qualquer Statement
+hi Statement cterm=none ctermbg=none ctermfg=green
+
+" Funções: print, len, range, etc...
+hi Function cterm=bold ctermbg=none ctermfg=blue
+
+" Condições: if, elif, else, etc...
+hi Conditional cterm=bold ctermbg=none ctermfg=yellow
+
+" Estruturas de repetição: for, while, etc...
+hi Repeat cterm=bold ctermbg=none ctermfg=green
+
+" operadores: in, and, or, etc...
+hi Operator cterm=none ctermbg=none ctermfg=42
+
+" Constantes: numeros, literais, etc...
+hi Constant cterm=none ctermbg=none ctermfg=cyan
+
+" Linha das classes: public class, static...
+hi StorageClass cterm=none ctermbg=none ctermfg=35
+
+" Tipos de dados: int, long, char....
+hi Type cterm=none ctermbg=none ctermfg=30
+
+" import, package, etc...
+hi PreProc cterm=none ctermbg=none ctermfg=170
+
+" Special, como o nome personalizado no comments
+hi Special cterm=none ctermbg=none ctermfg=cyan
+
+" Seletor do modo visual 
+hi Visual cterm=bold ctermbg=black ctermfg=NONE
+
+" Cores da numeração de linhas
+highlight LineNr ctermfg=237 ctermbg=232
+"|=====================================================|"
+
+
+
+
+
+" Pré-configurações de numeração de linhas e indentação
+set number
+set shiftwidth=4 smarttab
+set expandtab
+filetype indent on
+
+
+
+
+
+
+
+" Caracteres especiais areviados
+abbreviate ==> ⇒
+abbreviate --> →
+abbreviate <==> ⇔
+abbreviate <--> ↔
+abbreviate /-> ↦
+abbreviate //u 👍
+abbreviate //d 👎
+abbreviate //:-) ☺
+abbreviate :sad: ☹
+abbreviate :clap: 👏
+abbreviate :think: 🤔
+abbreviate :checklist: ☐ 
+abbreviate :check: ☑
+abbreviate :noncheck: ☒ 
+abbreviate =/= ≠
