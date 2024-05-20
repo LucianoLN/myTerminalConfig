@@ -28,7 +28,7 @@ bind-key v set pane-border-status off
 
 ## experimental
 multiple_panes="if [ #{window_panes} -eq 1 ]; then exit 1; fi"
-set-hook -g window-layout-changed 'if-shell "$multiple_panes" "set-option -g pane-border-status bottom" "set-option -g pane-border-status off"'
+#set-hook -g window-layout-changed 'if-shell "$multiple_panes" "set-option -g pane-border-status bottom" "set-option -g pane-border-status off"'
 #set-hook -g window-layout-changed 'select-pane -t'
 #set -g pane-border-format "#{?@custom_pane_title,:#{@custom_pane_title},} #{window_index}.#{pane_index}: #{pane_title} (#{pane_current_command}) "
 set -g pane-border-format "#{pane_index}: #{pane_title} (#{pane_current_command}) "
@@ -57,7 +57,7 @@ set-option -g status-style 'bg=colour232 fg=colour137'
 set-option -g status-justify left
 set-option -g status-left '  '
 
-set-option -g status-right '#[fg=colour0] #(echo $USER)   #[fg=colour6,bg=colour232,bold] %Hh%Mm  (%d/%m) #[fg=colour232,bg=colour6,none] #(hostname | cut -f 1 -d ".") '
+set-option -g status-right '#[fg=colour0] #(echo $USER)   #[fg=colour6,bg=colour232,bold]  |%H:%M|  (%d/%m) #[fg=colour232,bg=colour6,none] #(hostname | cut -f 1 -d ".") '
 set-option -g status-right-length 60
 set-option -g status-left-length 20
 #set-option -g status-right ' #[fg=#383838,bg=#ffaacc] #W #[bg=#383838] #[bg=#aa88cc] #(echo $USER)#[fg=#bbaaee]@#[fg=#383838]#H #[bg=#383838] #[bg=#9999ff] %d/%m %Hh%Mm #[bg=#383838]
